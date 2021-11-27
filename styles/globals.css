@@ -261,6 +261,20 @@ img {
   fill: var(--first-color);
 }
 
+.home__img {
+  animation: float 3s linear infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(3rem);
+  }
+}
+
 .home__blob-image {
   width: 170px;
 }
@@ -328,7 +342,7 @@ img {
   margin-bottom: var(--mb-2-5);
 }
 
-.about__info-title{
+.about__info-title {
   font-size: var(--h2-font-size);
   font-weight: var(--font-semi-bold);
   color: var(--title-color);
@@ -344,7 +358,7 @@ img {
   text-align: center;
 }
 
-.about__buttons{
+.about__buttons {
   display: flex;
   justify-content: center;
 }

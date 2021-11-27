@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import omelette from '../public/omelette-removebg_edit.png'
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import {
@@ -46,15 +47,15 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="home__img">
-            <Blob />
+          <div className="home__img image">
+            <Image src={omelette} width={550} alt='speciality' />
           </div>
           <div className="home__data">
             <h1 className="home__title">Hi! Wandu here...</h1>
             <h1 className="home__subtitle">I'm a Fullstack Developer</h1>
             <p className="home__description">
               I offer a high level of experience in software development and
-              produce good quality work. I also make a mean omelet.
+              produce good quality work. I also make a mean omelette.
             </p>
             <Link href="/contact">
               <a className="button button--flex">
@@ -95,7 +96,7 @@ const Blob = () => (
         129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
         -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
       />
-      <image className="home__blob-image" xlinkHref="/public/wandu.png" />
+      <image className="home__blob-image" xlinkHref="https://www.pexels.com/photo/man-smiling-behind-wall-220453/" />
     </g>
   </svg>
 );
