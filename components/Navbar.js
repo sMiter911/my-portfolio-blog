@@ -10,6 +10,7 @@ import {
   UilScenery,
   UilTimes,
   UilApps,
+  UilBackpack 
 } from "@iconscout/react-unicons";
 
 const Navbar = () => {
@@ -46,6 +47,13 @@ const Navbar = () => {
               <Link href="/skills">
                 <a className="nav__link">
                   <UilFileAlt size="18" color="#6563FF" /> Skills
+                </a>
+              </Link>
+            </li>
+            <li className="nav__item" onClick={handleClick}>
+              <Link href="/qualifications">
+                <a className="nav__link">
+                  <UilBackpack  size="18" color="#6563FF" /> Qualifications
                 </a>
               </Link>
             </li>
