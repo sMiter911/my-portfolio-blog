@@ -128,7 +128,7 @@ const Qualifications = () => {
                 {/* <span className="qualification__line"></span> */}
               </div>
               <div>
-                <h3 className="qualification__title">O'Level Certificate</h3>
+                <h3 className="qualification__title">O&apos;Level Certificate</h3>
                 <span className="qualification__subtitle">
                   Salesian High School
                 </span>

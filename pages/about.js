@@ -46,7 +46,7 @@ const About = () => {
           </div>
 
           <div className="about__buttons">
-            <a className="button button--flex" href="#" download='WANDUMUZI MATHUNJWA 2021_CV.pdf'>
+            <a className="button button--flex" href="../public/WANDUMUZI MATHUNJWA 2021_CV.pdf" download='WANDUMUZI MATHUNJWA 2021_CV.pdf'>
               Download CV
               <UilDownloadAlt size="18" color="#FFF" className="button__icon"/>
             </a>

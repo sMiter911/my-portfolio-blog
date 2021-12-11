@@ -57,7 +57,7 @@ export default function Home() {
           </div>
           <div className="home__data">
             <h1 className="home__title">Hi! Wandu here...</h1>
-            <h1 className="home__subtitle">I'm a Fullstack Developer</h1>
+            <h1 className="home__subtitle">I&apos;m a Fullstack Developer</h1>
             <p className="home__description">
               I offer a high level of experience in software development and
               produce good quality work. I also make a mean omelette.
