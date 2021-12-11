@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <div className="main">
       <Navbar />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
