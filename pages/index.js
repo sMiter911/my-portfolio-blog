@@ -14,6 +14,11 @@ import {
 
 export default function Home() {
   return (
+    <>
+    <Head>
+      <title>Wandu | Home</title>
+      <meta name="keywords" content="wandu"/>
+    </Head>
     <section className="home section">
       <div className="home__container container grid">
         <div className="home__content grid">
@@ -71,6 +76,7 @@ export default function Home() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

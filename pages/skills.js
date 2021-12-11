@@ -1,3 +1,4 @@
+import Head from "next/head";
 import {
   UilBracketsCurly,
   UilServers,
@@ -7,6 +8,11 @@ import {
 
 const Skills = () => {
   return (
+    <>
+    <Head>
+      <title>Wandu | Skills</title>
+      <meta name="keywords" content="wandu"/>
+    </Head>
     <section className="skills section">
       <h2 className="section__title">Skills</h2>
       <span className="section__subtitle"></span>
@@ -58,6 +64,7 @@ const Skills = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

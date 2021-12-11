@@ -4,9 +4,15 @@ import {
   UilLocationPinAlt,
   UilMessage,
 } from "@iconscout/react-unicons";
+import Head from "next/head";
 
 const Contact = () => {
   return (
+    <>
+    <Head>
+      <title>Wandu | Contact Me</title>
+      <meta name="keywords" content="wandu"/>
+    </Head>
     <section className="contact section">
       <h2 className="section__title">Contact Me</h2>
       <span className="section__subtitle">Get in Touch</span>
@@ -112,6 +118,7 @@ const Contact = () => {
         </form>
       </div>
     </section>
+    </>
   );
 };
 

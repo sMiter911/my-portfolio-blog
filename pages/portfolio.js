@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from "next/head";
 import desktop from "../public/pexels-designecologist-1779487.jpg";
 import market from "../public/pexels-markus-spiske-3970330.jpg";
 import company from "../public/pexels-serpstat-572056.jpg";
@@ -9,6 +10,11 @@ import "swiper/css";
 
 const Portfolio = () => {
   return (
+    <>
+    <Head>
+      <title>Wandu | Portfolio</title>
+      <meta name="keywords" content="wandu"/>
+    </Head>
     <section className="portfolio section">
       <h2 className="section__title">Portfolio</h2>
       <span className="section__subtitle">Most recent work</span>
@@ -110,6 +116,7 @@ const Portfolio = () => {
         </SwiperSlide>
       </Swiper>
     </section>
+    </>
   );
 };
 

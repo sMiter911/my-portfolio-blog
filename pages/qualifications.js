@@ -4,6 +4,7 @@ import {
   UilCalendarAlt,
 } from "@iconscout/react-unicons";
 import { useState } from "react";
+import Head from "next/head";
 
 const Qualifications = () => {
   const [showMe, setShowMe] = useState(false);
@@ -12,6 +13,11 @@ const Qualifications = () => {
   }
 
   return (
+    <>
+    <Head>
+      <title>Wandu | Qualifications</title>
+      <meta name="keywords" content="wandu"/>
+    </Head>
     <section className="qualification section">
       <h2 className="section__title">Qualification</h2>
       <span className="section__subtitle">Where I am from...</span>
@@ -222,6 +228,7 @@ const Qualifications = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

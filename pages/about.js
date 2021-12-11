@@ -1,9 +1,15 @@
 import Image from "next/image";
+import Head from "next/head";
 import wandu from "../public/wandu_award.png";
 import { UilDownloadAlt } from '@iconscout/react-unicons'
 
 const About = () => {
   return (
+    <>
+    <Head>
+      <title>Wandu | About</title>
+      <meta name="keywords" content="wandu"/>
+    </Head>
     <section className="about section">
       <h2 className="section__title">About Me</h2>
       <span className="section__subtitle">My Introduction</span>
@@ -49,6 +55,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
