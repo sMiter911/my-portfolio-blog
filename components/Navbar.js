@@ -31,7 +31,7 @@ const Navbar = () => {
             <li className="nav__item">
               <Link href="/">
                 <a className="nav__link" onClick={handleClick}>
-                  <UilEstate size="18" color="#6563FF" />
+                  <UilEstate size="18" color="#6563FF" className="nav__icon"/>
                   Home
                 </a>
               </Link>
@@ -39,49 +39,49 @@ const Navbar = () => {
             <li className="nav__item">
               <Link href="/about">
                 <a className="nav__link" onClick={handleClick}>
-                  <UilUser size="18" color="#6563FF" /> About
+                  <UilUser size="18" color="#6563FF" className="nav__icon"/> About
                 </a>
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
               <Link href="/skills">
                 <a className="nav__link">
-                  <UilFileAlt size="18" color="#6563FF" /> Skills
+                  <UilFileAlt size="18" color="#6563FF" className="nav__icon"/> Skills
                 </a>
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
               <Link href="/qualifications">
                 <a className="nav__link">
-                  <UilBackpack  size="18" color="#6563FF" /> Qualifications
+                  <UilBackpack  size="18" color="#6563FF" className="nav__icon"/> Qualifications
                 </a>
               </Link>
             </li>
-            <li className="nav__item" onClick={handleClick}>
+            {/* <li className="nav__item" onClick={handleClick}>
               <Link href="/services">
                 <a className="nav__link">
                   <UilBriefcaseAlt size="18" color="#6563FF" /> Services
                 </a>
               </Link>
-            </li>
+            </li> */}
             <li className="nav__item" onClick={handleClick}>
               <Link href="/portfolio">
                 <a className="nav__link">
-                  <UilScenery size="18" color="#6563FF" /> Portfolio
+                  <UilScenery size="18" color="#6563FF" className="nav__icon"/> Portfolio
                 </a>
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
               <Link href="/blog">
                 <a className="nav__link">
-                  <UilDocumentLayoutLeft size="18" color="#6563FF" /> Blog
+                  <UilDocumentLayoutLeft size="18" color="#6563FF" className="nav__icon"/> Blog
                 </a>
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
               <Link href="/contact">
                 <a className="nav__link">
-                  <UilMessage size="18" color="#6563FF" /> Contactme
+                  <UilMessage size="18" color="#6563FF" className="nav__icon"/> Contactme
                 </a>
               </Link>
             </li>

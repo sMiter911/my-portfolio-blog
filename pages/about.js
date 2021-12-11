@@ -1,5 +1,5 @@
 import Image from "next/image";
-import wandu from "../public/pp_stockholder.jpg";
+import wandu from "../public/wandu_award.png";
 import { UilDownloadAlt } from '@iconscout/react-unicons'
 
 const About = () => {
@@ -12,8 +12,9 @@ const About = () => {
         <Image
           src={wandu}
           alt="Picture of the Wandu"
-          height={4800}
+          sizes="50vw"
           className="about__img"
+          layout="responsive"
         />
 
         <div className="about__data">

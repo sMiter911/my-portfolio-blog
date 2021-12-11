@@ -3,28 +3,13 @@ import {
   UilBriefcaseAlt,
   UilCalendarAlt,
 } from "@iconscout/react-unicons";
-import Link from "next/link";
+import { useState } from "react";
 
 const Qualifications = () => {
-  //   // Tabs
-  //   const tabs = document.querySelectorAll("[data-target]"),
-  //     tabsContents = document.querySelectorAll("[data-content]");
-
-  //   tabs.forEach((tab) => {
-  //     tab.addEventListener("click", () => {
-  //       const target = document.querySelector(tab.dataset.target);
-
-  //       tabsContents.forEach((tabsContent) => {
-  //         tabsContent.classList.remove("qualification_active");
-  //       });
-  //       target.classList.add("qualification_active");
-
-  //       tabs.forEach((tab) => {
-  //         tab.classList.remove("qualification_active");
-  //       });
-  //       tab.classList.add("qualification_active");
-  //     });
-  //   });
+  const [showMe, setShowMe] = useState(false);
+  function toggle() {
+    setShowMe(!showMe);
+  }
 
   return (
     <section className="qualification section">
@@ -36,6 +21,7 @@ const Qualifications = () => {
           <div
             className="qualification__button button--flex qualification__active"
             data-target="#education"
+            onClick={toggle}
           >
             <UilGraduationCap
               size="18"
@@ -47,6 +33,7 @@ const Qualifications = () => {
           <div
             className="qualification__button button--flex"
             data-target="#work"
+            onClick={toggle}
           >
             <UilBriefcaseAlt
               size="18"
@@ -62,6 +49,9 @@ const Qualifications = () => {
             className="qualification__content qualification__active"
             data-content
             id="education"
+            style={{
+              display: showMe ? "none" : "block",
+            }}
           >
             <div className="qualification__data">
               <div>
@@ -148,7 +138,9 @@ const Qualifications = () => {
             </div>
           </div>
 
-          <div className="qualification__content" data-content id="work">
+          <div className="qualification__content" data-content id="work" style={{
+              display: showMe ? "block" : "none",
+            }}>
             <div className="qualification__data">
               <div>
                 <h3 className="qualification__title">Fullstack Developer</h3>
