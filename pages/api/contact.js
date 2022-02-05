@@ -1,22 +1,31 @@
-export default function (req, res) {
+const nodemailer = require("nodemailer");
 
-  let nodemailer = require("nodemailer");
-  const transporter = nodemailer.createTransport({
+export default function (req, res) {
+  let transporter = nodemailer.createTransport({
+    host: "mail.sysinfo.co.za",
     port: 465,
-    host: "smtp.gmail.com",
+    secure: true,
     auth: {
-      user: "syscontactform@gmail.com",
+      user: "contact@sysinfo.co.za",
       pass: process.env.EMAIL_PASSWORD,
     },
-    secure: false,
+    tls: {
+      rejectUnauthorized: false,
+    },
   });
 
   const mailData = {
-    from: "syscontactform@gmail.com",
+    from: "contact@sysinfo.co.za",
     to: "wandumuzi.m@sysinfo.co.za",
     subject: `Message From ${req.body.name}`,
     text: req.body.project + " | Sent from: " + req.body.email,
-    html: `<div>${req.body.message}</div><p>Sent from: ${req.body.email}</p>`,
+    html: `<div>
+    <h3>Potential Client: ${req.body.name}</h3>
+    <h4>Enquiry: ${req.body.project}</h4>
+    <h4>Details are as follows:</h4></div>
+    <p>${req.body.message}</p>
+    <p>Sent from: ${req.body.email}</p>
+    `,
   };
 
   transporter.sendMail(mailData, function (err, info) {
@@ -26,4 +35,5 @@ export default function (req, res) {
 
   console.log(req.body);
   res.send("success");
+
 }
