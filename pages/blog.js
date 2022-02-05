@@ -21,7 +21,6 @@ export async function getStaticProps() {
 }
 
 export default function Blog({ blogPosts }) {
-  console.log(blogPosts);
   return (
     <>
       <Head>

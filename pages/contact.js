@@ -16,7 +16,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Sending");
 
     let data = {
       name,
@@ -34,7 +33,6 @@ const Contact = () => {
       body: JSON.stringify(data),
     })
       .then((res) => {
-        console.log("Response received", res);
         if (res.status === 200) {
           setSubmitted(true);
           setName("");
@@ -44,8 +42,7 @@ const Contact = () => {
         }
       })
       .catch((err) => {
-        console.log("Response error");
-        console.log(err.message);
+        console.error(err.message);
       });
   };
 
