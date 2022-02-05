@@ -31,14 +31,23 @@ export async function getStaticProps({ params }) {
     "fields.slug": params.slug,
   });
 
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: "/blog",
+        permanent: false,
+      },
+    };
+  }
+
   return {
-    props: {blogPost: items[0]},
+    props: { blogPost: items[0] },
     revalidate: 1,
   };
 }
 
 export default function BlogDetails({ blogPost }) {
-  if(!blogPost) return <Skeleton/>
+  if (!blogPost) return <Skeleton />;
 
   const { title, featuredImage, post } = blogPost.fields;
 
