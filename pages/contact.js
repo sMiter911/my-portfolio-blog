@@ -5,7 +5,7 @@ import {
   UilMessage,
 } from "@iconscout/react-unicons";
 import Head from "next/head";
-import {useState} from 'react';
+import { useState } from "react";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -22,147 +22,157 @@ const Contact = () => {
       name,
       email,
       project,
-      message
-    }
+      message,
+    };
 
-    fetch('/api/contact',{
-      method: 'POST',
+    fetch("/api/contact", {
+      method: "POST",
       headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data)
-    }).then((res) => {
-      console.log('Response received');
-      if(res.status === 200){
-        console.log('Response success');
-        setSubmitted(true);
-        setName("");
-        setEmail("");
-        setProject("");
-        setMessage("");
-      }
-    }).catch((err) => {
-      console.log('Response error');
-      console.log(err.message);
+      body: JSON.stringify(data),
     })
-  }
+      .then((res) => {
+        console.log("Response received", res);
+        if (res.status === 200) {
+          setSubmitted(true);
+          setName("");
+          setEmail("");
+          setProject("");
+          setMessage("");
+        }
+      })
+      .catch((err) => {
+        console.log("Response error");
+        console.log(err.message);
+      });
+  };
 
   return (
     <>
-    <Head>
-      <title>Wandu | Contact Me</title>
-      <meta name="keywords" content="wandu"/>
-    </Head>
-    <section className="contact section">
-      <h2 className="section__title">Contact Me</h2>
-      <span className="section__subtitle">Get in Touch</span>
+      <Head>
+        <title>Wandu | Contact Me</title>
+        <meta name="keywords" content="wandu" />
+      </Head>
+      <section className="contact section">
+        <h2 className="section__title">Contact Me</h2>
+        <span className="section__subtitle">Get in Touch</span>
 
-      <div className="contact__container container grid">
-        <div>
-          <div className="contact__information">
-            <UilPhone size="18" color="#6563FF" className="contact__icon" />
-            <div>
-              <h3 className="contact__title">Call Me</h3>
-              <span className="contact__subtitle">+27-83-663-4617</span>
-            </div>
-          </div>
-          <div className="contact__information">
-            <UilEnvelopeEdit
-              size="18"
-              color="#6563FF"
-              className="contact__icon"
-            />
-            <div>
-              <h3 className="contact__title">Email</h3>
-              <span className="contact__subtitle">
-                wandumuzi.m@sysinfo.co.za
-              </span>
-            </div>
-          </div>
-          <div className="contact__information">
-            <UilLocationPinAlt
-              size="18"
-              color="#6563FF"
-              className="contact__icon"
-            />
-            <div>
-              <h3 className="contact__title">Location</h3>
-              <span className="contact__subtitle">
-                South Africa - Johannesburg
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <form className="contact__form grid">
-          <div className="contact__inputs grid">
-            <div className="contact__content">
-              <label className="contact__label" htmlFor="name">
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                autoComplete="name"
-                className="contact__input"
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <div className="contact__content">
-              <label className="contact__label" htmlFor="email">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                className="contact__input"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="contact__content">
-            <label className="contact__label" htmlFor="project">
-              What Ails You?
-            </label>
-            <input
-              id="project"
-              name="project"
-              type="text"
-              autoComplete="project"
-              className="contact__input"
-              onChange={(e) => {setProject(e.target.value)}}
-            />
-          </div>
-          <div className="contact__content">
-            <label className="contact__label" htmlFor="message">
-              Message
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              cols={0}
-              rows={7}
-              className="contact__input"
-              onChange={(e) => {setMessage(e.target.value)}}
-            />
-          </div>
+        <div className="contact__container container grid">
           <div>
-            <a className="button button--flex" onClick={(e)=>{handleSubmit(e)}}>
-              Send Message
-              <UilMessage
+            <div className="contact__information">
+              <UilPhone size="18" color="#6563FF" className="contact__icon" />
+              <div>
+                <h3 className="contact__title">Call Me</h3>
+                <span className="contact__subtitle">+27-83-663-4617</span>
+              </div>
+            </div>
+            <div className="contact__information">
+              <UilEnvelopeEdit
                 size="18"
-                color="#FFF"
-                className="button__icon"
+                color="#6563FF"
+                className="contact__icon"
               />
-            </a>
+              <div>
+                <h3 className="contact__title">Email</h3>
+                <span className="contact__subtitle">
+                  wandumuzi.m@sysinfo.co.za
+                </span>
+              </div>
+            </div>
+            <div className="contact__information">
+              <UilLocationPinAlt
+                size="18"
+                color="#6563FF"
+                className="contact__icon"
+              />
+              <div>
+                <h3 className="contact__title">Location</h3>
+                <span className="contact__subtitle">
+                  South Africa - Johannesburg
+                </span>
+              </div>
+            </div>
           </div>
-        </form>
-      </div>
-    </section>
+
+          <form className="contact__form grid">
+            <div className="contact__inputs grid">
+              <div className="contact__content">
+                <label className="contact__label" htmlFor="name">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  value={name}
+                  type="text"
+                  autoComplete="name"
+                  className="contact__input"
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="contact__content">
+                <label className="contact__label" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  value={email}
+                  type="email"
+                  autoComplete="email"
+                  className="contact__input"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="contact__content">
+              <label className="contact__label" htmlFor="project">
+                Enquiry
+              </label>
+              <input
+                id="project"
+                name="project"
+                value={project}
+                type="text"
+                autoComplete="project"
+                className="contact__input"
+                onChange={(e) => {
+                  setProject(e.target.value);
+                }}
+              />
+            </div>
+            <div className="contact__content">
+              <label className="contact__label" htmlFor="message">
+                Details
+              </label>
+              <textarea
+                name="message"
+                value={message}
+                id="message"
+                cols={0}
+                rows={7}
+                className="contact__input"
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
+              />
+            </div>
+            <div>
+              <a
+                className="button button--flex"
+                onClick={(e) => {
+                  handleSubmit(e);
+                }}
+              >
+                Send Message
+                <UilMessage size="18" color="#FFF" className="button__icon" />
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
     </>
   );
 };
