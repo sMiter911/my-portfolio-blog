@@ -46,7 +46,7 @@ const About = () => {
           </div>
 
           <div className="about__buttons">
-            <a className="button button--flex" href="../public/WANDUMUZI MATHUNJWA 2021_CV.pdf" download='WANDUMUZI MATHUNJWA 2021_CV.pdf'>
+            <a className="button button--flex" href="https://drive.google.com/file/d/1-LB60KGPjuqHh3dZR8sKRgdj-zWQO8Y5/view?usp=sharing" target = "_blank" rel="noreferrer">
               Download CV
               <UilDownloadAlt size="18" color="#FFF" className="button__icon"/>
             </a>

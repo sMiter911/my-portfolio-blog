@@ -2,11 +2,34 @@ import { createClient } from "contentful";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Skeleton from "../../components/Skeleton";
+import { BLOCKS } from "@contentful/rich-text-types";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 });
+
+const renderOption = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => (
+      <p className={paragraphClass(node)}>{children}</p>
+    ),
+    [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+      return (
+        <Image
+          src={`https:${node.data.target.fields.file.url}`}
+          height={node.data.target.fields.file.details.image.height}
+          width={node.data.target.fields.file.details.image.width}
+          alt="image"
+        />
+      );
+    },
+  },
+};
+function paragraphClass(node) {
+  const className = "paragraph";
+  return className;
+}
 
 export const getStaticPaths = async () => {
   const res = await client.getEntries({
@@ -66,7 +89,7 @@ export default function BlogDetails({ blogPost }) {
           </div>
           <div className="blog-post">
             <br />
-            <div>{documentToReactComponents(post)}</div>
+            <div>{documentToReactComponents(post, renderOption)}</div>
           </div>
 
           <style jsx>{`

@@ -57,7 +57,7 @@ export default function BlogPostCard({ post }) {
         }
         .actions a {
           color: #fff;
-          background: #f01b29;
+          background: #6e57e0;
           padding: 16px 24px;
           text-decoration: none;
         }
