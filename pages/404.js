@@ -14,7 +14,6 @@ const NotFound = () => {
   return (
     <section className="home section">
       <div className="home__container container grid">
-        <div className="home__content grid">
           <div className="not-found">
             <h1>404</h1>
             <h2>Oops! That page cannot be found 😭</h2>
@@ -37,7 +36,6 @@ const NotFound = () => {
               }
             `}</style>
           </div>
-        </div>
       </div>
     </section>
   );
