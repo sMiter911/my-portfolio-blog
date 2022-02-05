@@ -34,7 +34,7 @@ const Contact = () => {
       body: JSON.stringify(data)
     }).then((res) => {
       console.log('Response received');
-      if(res.status === 2000){
+      if(res.status === 200){
         console.log('Response success');
         setSubmitted(true);
         setName("");
