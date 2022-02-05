@@ -3,14 +3,13 @@ export default function (req, res) {
   let nodemailer = require("nodemailer");
   const transporter = nodemailer.createTransport({
     port: 465,
-    host: "mail.sysinfo.co.za",
+    host: "smtp.gmail.com",
     auth: {
-      user: "contact@sysinfo.co.za",
+      user: "syscontactform@gmail.com",
       pass: process.env.EMAIL_PASSWORD,
     },
-    secure: true,
+    secure: false,
   });
-
 
   const mailData = {
     from: "syscontactform@gmail.com",
