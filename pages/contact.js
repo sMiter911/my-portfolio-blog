@@ -5,8 +5,49 @@ import {
   UilMessage,
 } from "@iconscout/react-unicons";
 import Head from "next/head";
+import {useState} from 'react';
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [project, setProject] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Sending");
+
+    let data = {
+      name,
+      email,
+      project,
+      message
+    }
+
+    fetch('/api/contact',{
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then((res) => {
+      console.log('Response received');
+      if(res.status === 2000){
+        console.log('Response success');
+        setSubmitted(true);
+        setName("");
+        setEmail("");
+        setProject("");
+        setMessage("");
+      }
+    }).catch((err) => {
+      console.log('Response error');
+      console.log(err.message);
+    })
+  }
+
   return (
     <>
     <Head>
@@ -66,6 +107,7 @@ const Contact = () => {
                 type="text"
                 autoComplete="name"
                 className="contact__input"
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="contact__content">
@@ -76,8 +118,9 @@ const Contact = () => {
                 id="email"
                 name="email"
                 type="email"
-                autoComplete="name"
+                autoComplete="email"
                 className="contact__input"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
@@ -91,6 +134,7 @@ const Contact = () => {
               type="text"
               autoComplete="project"
               className="contact__input"
+              onChange={(e) => {setProject(e.target.value)}}
             />
           </div>
           <div className="contact__content">
@@ -103,10 +147,11 @@ const Contact = () => {
               cols={0}
               rows={7}
               className="contact__input"
+              onChange={(e) => {setMessage(e.target.value)}}
             />
           </div>
           <div>
-            <a className="button button--flex">
+            <a className="button button--flex" onClick={(e)=>{handleSubmit(e)}}>
               Send Message
               <UilMessage
                 size="18"
