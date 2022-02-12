@@ -229,7 +229,7 @@ const Contact = () => {
             <div className="text-left">
               {showSuccessMessage && (
                 <p className="text__green">
-                  Thankyou! Your Message has been delivered.
+                  Thank you! Your Message has been delivered.
                 </p>
               )}
               {showFailureMessage && (
