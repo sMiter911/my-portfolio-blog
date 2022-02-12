@@ -32,7 +32,6 @@ async function sendEmail(req, res) {
               <p>${req.body.message}</p>
               <br>
               </div>
-              <img src="../../public/logo.png" class="logo-image" style="height: 50px;width: 50px;border-radius: 5px;overflow: hidden;">
               <p class="footer" style="font-size: 16px;padding-bottom: 20px;border-bottom: 1px solid #D1D5DB;">CONTACT US FORM LEAD</p>
               <div class="footer-links" style="display: flex;justify-content: center;align-items: center;">
                 <a href="https://my-portfolio-blog-omega.vercel.app/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Website</a>
