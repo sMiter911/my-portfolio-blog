@@ -8,14 +8,54 @@ import Head from "next/head";
 import { useState } from "react";
 
 const Contact = () => {
+  // States for contact form fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  //   Form validation state
+  const [errors, setErrors] = useState({});
+
+  //   Setting button text on form submission
+  const [buttonText, setButtonText] = useState("Send");
+
+  // Setting success or failure messages states
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showFailureMessage, setShowFailureMessage] = useState(false);
+
+  // Validation check method
+  const handleValidation = () => {
+    let tempErrors = {};
+    let isValid = true;
+
+    if (name.length <= 0) {
+      tempErrors["name"] = true;
+      isValid = false;
+    }
+    if (email.length <= 0) {
+      tempErrors["email"] = true;
+      isValid = false;
+    }
+    if (subject.length <= 0) {
+      tempErrors["subject"] = true;
+      isValid = false;
+    }
+    if (message.length <= 0) {
+      tempErrors["message"] = true;
+      isValid = false;
+    }
+
+    setErrors({ ...tempErrors });
+    console.log("errors", errors);
+    return isValid;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    let isValidForm = handleValidation();
 
     let data = {
       name,
@@ -24,26 +64,29 @@ const Contact = () => {
       message,
     };
 
-    fetch("/api/sendgrid", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => {
-        if (res.status === 200) {
-          setSubmitted(true);
-          setName("");
-          setEmail("");
-          setSubject("");
-          setMessage("");
-        }
-      })
-      .catch((err) => {
-        console.error(err.message);
+    if (isValidForm) {
+      setButtonText("Sending");
+      const res = await fetch("/api/sendgrid", {
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
       });
+
+      const { error } = await res.json();
+      if (error) {
+        console.log(error);
+        setShowSuccessMessage(false);
+        setShowFailureMessage(true);
+        setButtonText("Send");
+        return;
+      }
+      setShowSuccessMessage(true);
+      setShowFailureMessage(false);
+      setButtonText("Send");
+    }
+    console.log(name, email, subject, message);
   };
 
   return (
@@ -97,7 +140,7 @@ const Contact = () => {
             <div className="contact__inputs grid">
               <div className="contact__content">
                 <label className="contact__label" htmlFor="name">
-                  Name
+                  Name*
                 </label>
                 <input
                   id="name"
@@ -108,10 +151,13 @@ const Contact = () => {
                   className="contact__input"
                   onChange={(e) => setName(e.target.value)}
                 />
+                {errors?.name && (
+                  <p className="text-red-500">Name cannot be empty.</p>
+                )}
               </div>
               <div className="contact__content">
                 <label className="contact__label" htmlFor="email">
-                  Email
+                  Email*
                 </label>
                 <input
                   id="email"
@@ -122,11 +168,14 @@ const Contact = () => {
                   className="contact__input"
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                {errors?.email && (
+                  <p className="text-red-500">Email cannot be empty.</p>
+                )}
               </div>
             </div>
             <div className="contact__content">
               <label className="contact__label" htmlFor="subject">
-                Subject
+                Subject*
               </label>
               <input
                 id="subject"
@@ -139,10 +188,13 @@ const Contact = () => {
                   setSubject(e.target.value);
                 }}
               />
+              {errors?.subject && (
+                <p className="text-red-500">Subject cannot be empty.</p>
+              )}
             </div>
             <div className="contact__content">
               <label className="contact__label" htmlFor="message">
-                Details
+                Details*
               </label>
               <textarea
                 name="message"
@@ -155,6 +207,9 @@ const Contact = () => {
                   setMessage(e.target.value);
                 }}
               />
+              {errors?.message && (
+                <p className="text-red-500">Message body cannot be empty.</p>
+              )}
             </div>
             <div>
               <a
@@ -163,9 +218,21 @@ const Contact = () => {
                   handleSubmit(e);
                 }}
               >
-                Send Message
+                {buttonText}
                 <UilMessage size="18" color="#FFF" className="button__icon" />
               </a>
+            </div>
+            <div className="text-left">
+              {showSuccessMessage && (
+                <p className="text-green-500 font-semibold text-sm my-2">
+                  Thankyou! Your Message has been delivered.
+                </p>
+              )}
+              {showFailureMessage && (
+                <p className="text-red-500">
+                  Oops! Something went wrong, please try again.
+                </p>
+              )}
             </div>
           </form>
         </div>
