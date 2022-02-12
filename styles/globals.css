@@ -111,6 +111,24 @@ img {
   padding-bottom: 15px;
 }
 
+.required {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: start;
+  letter-spacing: normal;
+  fill: #ef4444;
+  background: #ffffff;
+}
+
+.text__red {
+  color: #ef4444;
+}
+
+.text__green {
+  color: #00b300;
+  font-weight: 600;
+}
+
 /* ===================RESUSABLE CSS CLASSES ====================*/
 .section {
   padding: 2rem 0 4rem;

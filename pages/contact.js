@@ -140,7 +140,8 @@ const Contact = () => {
             <div className="contact__inputs grid">
               <div className="contact__content">
                 <label className="contact__label" htmlFor="name">
-                  Name*
+                  Name
+                  <span className="required">*</span>
                 </label>
                 <input
                   id="name"
@@ -152,12 +153,13 @@ const Contact = () => {
                   onChange={(e) => setName(e.target.value)}
                 />
                 {errors?.name && (
-                  <p className="text-red-500">Name cannot be empty.</p>
+                  <p className="text__red">Name cannot be empty.</p>
                 )}
               </div>
               <div className="contact__content">
                 <label className="contact__label" htmlFor="email">
-                  Email*
+                  Email
+                  <span className="required">*</span>
                 </label>
                 <input
                   id="email"
@@ -169,13 +171,14 @@ const Contact = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 {errors?.email && (
-                  <p className="text-red-500">Email cannot be empty.</p>
+                  <p className="text__red">Email cannot be empty.</p>
                 )}
               </div>
             </div>
             <div className="contact__content">
               <label className="contact__label" htmlFor="subject">
-                Subject*
+                Subject
+                <span className="required">*</span>
               </label>
               <input
                 id="subject"
@@ -189,12 +192,13 @@ const Contact = () => {
                 }}
               />
               {errors?.subject && (
-                <p className="text-red-500">Subject cannot be empty.</p>
+                <p className="text__red">Subject cannot be empty.</p>
               )}
             </div>
             <div className="contact__content">
               <label className="contact__label" htmlFor="message">
-                Details*
+                Details
+                <span className="required">*</span>
               </label>
               <textarea
                 name="message"
@@ -208,7 +212,7 @@ const Contact = () => {
                 }}
               />
               {errors?.message && (
-                <p className="text-red-500">Message body cannot be empty.</p>
+                <p className="text__red">Message body cannot be empty.</p>
               )}
             </div>
             <div>
@@ -224,12 +228,12 @@ const Contact = () => {
             </div>
             <div className="text-left">
               {showSuccessMessage && (
-                <p className="text-green-500 font-semibold text-sm my-2">
+                <p className="text__green">
                   Thankyou! Your Message has been delivered.
                 </p>
               )}
               {showFailureMessage && (
-                <p className="text-red-500">
+                <p className="text__red">
                   Oops! Something went wrong, please try again.
                 </p>
               )}
