@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Head from "next/head";
-import desktop from "../public/pexels-designecologist-1779487.jpg";
-import market from "../public/pexels-markus-spiske-3970330.jpg";
+import vusela from "../public/vusela.png";
+import coming from "../public/coming_soon.jpg";
 import company from "../public/pexels-serpstat-572056.jpg";
+import prime from "../public/prime_pixels.png";
 import { UilArrowRight } from "@iconscout/react-unicons";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+
+import { Autoplay } from "swiper";
 
 const Portfolio = () => {
   return (
@@ -22,6 +25,11 @@ const Portfolio = () => {
       <Swiper
         className="portfolio__container container mySwiper"
         spaceBetween={50}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
         slidesPerView={1}
         pagination={{ clickable: true }}
         onSlideChange={() => console.log("slide change")}
@@ -30,9 +38,9 @@ const Portfolio = () => {
         <SwiperSlide>
           <div className="portfolio__content grid">
             <Image
-              src={desktop}
+              src={vusela}
               sizes="50vw"
-              alt="Desktop"
+              alt="Vusela"
               className="portfolio__img"
               layout="responsive"
             />
@@ -44,9 +52,11 @@ const Portfolio = () => {
               </p>
               <a
                 className="button button--flex button--small portfolio__button"
-                href="#"
+                href="https://waveportal-starter-project.smiter911.repl.co/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Demo
+                Visit
                 <UilArrowRight
                   size="18"
                   color="#FFF"
@@ -56,13 +66,12 @@ const Portfolio = () => {
             </div>
           </div>
         </SwiperSlide>
-
         <SwiperSlide>
           <div className="portfolio__content grid">
             <Image
-              src={market}
+              src={coming}
               sizes="50vw"
-              alt="Market"
+              alt="Coming"
               className="portfolio__img"
               layout="responsive"
             />
@@ -71,7 +80,7 @@ const Portfolio = () => {
               <p className="portfolio__description">
                 A gallery to show off minted NFTs and ship them for selling.
               </p>
-              <a
+              {/* <a
                 className="button button--flex button--small portfolio__button"
                 href="#"
               >
@@ -81,11 +90,10 @@ const Portfolio = () => {
                   color="#FFF"
                   className="button__icon"
                 />
-              </a>
+              </a> */}
             </div>
           </div>
         </SwiperSlide>
-
         <SwiperSlide>
           <div className="portfolio__content grid">
             <Image
@@ -96,15 +104,47 @@ const Portfolio = () => {
               layout="responsive"
             />
             <div className="portfolio__data">
-              <h3 className="portfolio__title">Company website</h3>
+              <h3 className="portfolio__title">SYSINFO Company website</h3>
               <p className="portfolio__description">
                 SYSINFO started it all, the home of where it all takes places.
               </p>
               <a
                 className="button button--flex button--small portfolio__button"
-                href="#"
+                href="https://sysinfo.co.za/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Demo
+                Visit
+                <UilArrowRight
+                  size="18"
+                  color="#FFF"
+                  className="button__icon"
+                />
+              </a>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="portfolio__content grid">
+            <Image
+              src={prime}
+              sizes="50vw"
+              alt="Prime"
+              className="portfolio__img"
+              layout="responsive"
+            />
+            <div className="portfolio__data">
+              <h3 className="portfolio__title">Primepixels Media website</h3>
+              <p className="portfolio__description">
+                When you want to capture that special moment, they are the most perfect for the job.
+              </p>
+              <a
+                className="button button--flex button--small portfolio__button"
+                href="https://primepixelsmedia.co.za/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit
                 <UilArrowRight
                   size="18"
                   color="#FFF"
