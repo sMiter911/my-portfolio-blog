@@ -10,7 +10,7 @@ import { useState } from "react";
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [project, setProject] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -20,11 +20,11 @@ const Contact = () => {
     let data = {
       name,
       email,
-      project,
+      subject,
       message,
     };
 
-    fetch("/api/contact", {
+    fetch("/api/sendgrid", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -37,7 +37,7 @@ const Contact = () => {
           setSubmitted(true);
           setName("");
           setEmail("");
-          setProject("");
+          setSubject("");
           setMessage("");
         }
       })
@@ -125,18 +125,18 @@ const Contact = () => {
               </div>
             </div>
             <div className="contact__content">
-              <label className="contact__label" htmlFor="project">
-                Enquiry
+              <label className="contact__label" htmlFor="subject">
+                Subject
               </label>
               <input
-                id="project"
-                name="project"
-                value={project}
+                id="subject"
+                name="subject"
+                value={subject}
                 type="text"
-                autoComplete="project"
+                autoComplete="subject"
                 className="contact__input"
                 onChange={(e) => {
-                  setProject(e.target.value);
+                  setSubject(e.target.value);
                 }}
               />
             </div>
