@@ -173,7 +173,7 @@ export default function Home() {
                 I offer a high level of experience in software development and
                 produce good quality work. I also make a mean omelette.
               </p>
-              <Link href="/contact" legacyBehavior>
+              <Link href="/#contact-me" legacyBehavior>
                 <a className="button button--flex">
                   Contact Me{" "}
                   <UilMessage size="18" color="#FFF" className="button__icon" />
