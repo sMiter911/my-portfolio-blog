@@ -14,7 +14,7 @@ export default function BlogPostCard({ post }) {
           style={{ backgroundImage: `url(${bgImage})` }}
         ></div>
         <ul className="details">
-          <Link href={"/blog/" + slug}>
+          <Link href={"/blog/" + slug} legacyBehavior>
             <a>Read More...</a>
           </Link>
         </ul>
@@ -23,7 +23,7 @@ export default function BlogPostCard({ post }) {
         <h4>{title}</h4>
         <p>{description}</p>
         <p className="read-more">
-          <Link href={"/blog/" + slug}>
+          <Link href={"/blog/" + slug} legacyBehavior>
             <a>Read More...</a>
           </Link>
         </p>

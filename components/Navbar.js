@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <header className="header">
       <nav className="nav container">
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a className="nav__logo">Wandu</a>
         </Link>
         <div
@@ -32,7 +32,7 @@ const Navbar = () => {
         >
           <ul className="nav__list grid">
             <li className="nav__item">
-              <Link href="/">
+              <Link href="/" legacyBehavior>
                 <a className="nav__link" onClick={handleClick}>
                   <UilEstate size="18" color="#6563FF" className="nav__icon" />
                   Home
@@ -40,7 +40,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item">
-              <Link href="/#about-me">
+              <Link href="/#about-me" legacyBehavior>
                 <a className="nav__link" onClick={handleClick}>
                   <UilUser size="18" color="#6563FF" className="nav__icon" />{" "}
                   About
@@ -48,7 +48,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/#skills">
+              <Link href="/#skills" legacyBehavior>
                 <a className="nav__link">
                   <UilFileAlt size="18" color="#6563FF" className="nav__icon" />{" "}
                   Skills
@@ -56,7 +56,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/#work-qualifications">
+              <Link href="/#work-qualifications" legacyBehavior>
                 <a className="nav__link">
                   <UilBackpack
                     size="18"
@@ -75,7 +75,7 @@ const Navbar = () => {
               </Link>
             </li> */}
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/#portfolio">
+              <Link href="/#portfolio" legacyBehavior>
                 <a className="nav__link">
                   <UilScenery size="18" color="#6563FF" className="nav__icon" />{" "}
                   Portfolio
@@ -83,7 +83,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/blog">
+              <Link href="/blog" legacyBehavior>
                 <a className="nav__link">
                   <UilDocumentLayoutLeft
                     size="18"
@@ -95,7 +95,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/#contact-me">
+              <Link href="/#contact-me" legacyBehavior>
                 <a className="nav__link">
                   <UilMessage size="18" color="#6563FF" className="nav__icon" />{" "}
                   Contactme
