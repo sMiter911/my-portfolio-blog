@@ -9,61 +9,67 @@ import {
 const Skills = () => {
   return (
     <>
-    <Head>
-      <title>Wandu | Skills</title>
-      <meta name="keywords" content="wandu"/>
-    </Head>
-    <section className="skills section">
-      <h2 className="section__title">Skills</h2>
-      <span className="section__subtitle"></span>
+      <Head>
+        <title>Wandu | Skills</title>
+        <meta name="keywords" content="wandu" />
+      </Head>
+      <section className="skills section">
+        <h2 className="section__title">Skills & Services</h2>
+        <span className="section__subtitle">
+          I deliver top-notch projects using modern technologies and maintain a
+          focus on efficient and clean code. Contact me to discuss requirements
+          and pricing.
+        </span>
 
-      <div className="skills__container container grid">
-        <div>
-          <div className="skills__content">
-            <div className="skills__header">
+        <div className="cp_container">
+          <div className="cp_row">
+            <div className="cp_service">
               <UilBracketsCurly
-                size="18"
+                size="38"
                 color="#6563FF"
-                className="skills__icon"
+                className="cp_skills__icon"
               />
               <div>
-                <h1 className="skills__titles">Frontend Developer</h1>
+                <h2 className="skills__titles">Frontend Developer</h2>
                 <span className="skills_subtitle">More than 4+ years</span>
               </div>
             </div>
-            <div className="skills__header">
-              <UilSwatchbook 
-                size="18"
+            <div className="cp_service">
+              <UilServers
+                size="38"
                 color="#6563FF"
-                className="skills__icon"
+                className="cp_skills__icon"
               />
               <div>
-                <h1 className="skills__titles">Designer</h1>
-                <span className="skills_subtitle">More than 2+ years</span>
+                <h2 className="skills__titles">Backend Developer</h2>
+                <span className="skills_subtitle">More than 4+ years</span>
               </div>
             </div>
-            <div className="skills__header">
-              <UilServers size="18" color="#6563FF" className="skills__icon" />
-              <div>
-                <h1 className="skills__titles">Backend Developer</h1>
-                <span className="skills_subtitle">More than 5+ years</span>
-              </div>
-            </div>
-            <div className="skills__header">
+            <div className="cp_service">
               <UilPuzzlePiece
-                size="18"
+                size="38"
                 color="#6563FF"
-                className="skills__icon"
+                className="cp_skills__icon"
               />
               <div>
-                <h1 className="skills__titles">Cobol Developer</h1>
-                <span className="skills_subtitle">More than 3+ years</span>
+                <h2 className="skills__titles">COBOL Developer</h2>
+                <span className="skills_subtitle">More than 4+ years</span>
+              </div>
+            </div>
+            <div className="cp_service">
+              <UilSwatchbook
+                size="38"
+                color="#6563FF"
+                className="cp_skills__icon"
+              />
+              <div>
+                <h2 className="skills__titles">UI/UX Designer</h2>
+                <span className="skills_subtitle">More than 4+ years</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };

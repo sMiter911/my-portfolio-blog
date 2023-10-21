@@ -48,7 +48,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/skills">
+              <Link href="/#skills">
                 <a className="nav__link">
                   <UilFileAlt size="18" color="#6563FF" className="nav__icon" />{" "}
                   Skills
@@ -56,7 +56,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/qualifications">
+              <Link href="/#work-qualifications">
                 <a className="nav__link">
                   <UilBackpack
                     size="18"
