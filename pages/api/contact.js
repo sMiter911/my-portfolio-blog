@@ -7,7 +7,7 @@ const handler = async (req, res) => {
         //Do some thing
         await sendMail(
           "Wandus Webiste Contact Form",
-          "contact@sysinfo.co.za",
+          "wandumuzi.m@sysinfo.co.za",
           `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
       <head>
