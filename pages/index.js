@@ -94,7 +94,7 @@ export default function Home() {
 
     if (isValidForm) {
       setButtonText("Sending");
-      const res = await fetch("/api/sendgrid", {
+      const res = await fetch("/api/contact", {
         body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
