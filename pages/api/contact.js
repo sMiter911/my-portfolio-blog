@@ -46,7 +46,7 @@ const handler = async (req, res) => {
       </body>
       </html>`
         );
-        res.status(200).send("Success");
+        res.status(200).json({ message: "success" });
         break;
       }
       case "GET": {
