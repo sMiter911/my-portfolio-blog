@@ -29,20 +29,10 @@ export default function Blog({ blogPosts }) {
       </Head>
       <section className="home section">
         <div className="home__container container grid">
-          <div className="home__content grid">
-            <div className="recipe-list">
-              {blogPosts.map((post) => (
-                <BlogPostCard key={post.sys.id} post={post} />
-              ))}
-
-              <style jsx>{`
-                .recipe-list {
-                  display: grid;
-                  grid-template-columns: 1fr 1fr;
-                  grid-gap: 20px 60px;
-                }
-              `}</style>
-            </div>
+          <div>
+            {blogPosts.map((post) => (
+              <BlogPostCard key={post.sys.id} post={post} />
+            ))}
           </div>
         </div>
       </section>

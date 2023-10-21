@@ -75,7 +75,7 @@ const Navbar = () => {
               </Link>
             </li> */}
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/portfolio">
+              <Link href="/#portfolio">
                 <a className="nav__link">
                   <UilScenery size="18" color="#6563FF" className="nav__icon" />{" "}
                   Portfolio
