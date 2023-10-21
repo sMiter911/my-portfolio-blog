@@ -95,7 +95,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/contact">
+              <Link href="/#contact-me">
                 <a className="nav__link">
                   <UilMessage size="18" color="#6563FF" className="nav__icon" />{" "}
                   Contactme
