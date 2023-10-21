@@ -51,7 +51,7 @@ const handler = async (req, res) => {
       }
       case "GET": {
         //Do some thing
-        res.status(200).send(req.auth_data);
+        res.status(200).json({ message: "success" });
         break;
       }
       default:
