@@ -10,7 +10,7 @@ import {
   UilScenery,
   UilTimes,
   UilApps,
-  UilBackpack 
+  UilBackpack,
 } from "@iconscout/react-unicons";
 
 const Navbar = () => {
@@ -23,37 +23,47 @@ const Navbar = () => {
   return (
     <header className="header">
       <nav className="nav container">
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a className="nav__logo">Wandu</a>
         </Link>
-        <div className={`${active ? "show__menu" : "hide__menu"} nav__menu`} id="nav_menu">
+        <div
+          className={`${active ? "show__menu" : "hide__menu"} nav__menu`}
+          id="nav_menu"
+        >
           <ul className="nav__list grid">
             <li className="nav__item">
-              <Link href="/">
+              <Link href="/" legacyBehavior>
                 <a className="nav__link" onClick={handleClick}>
-                  <UilEstate size="18" color="#6563FF" className="nav__icon"/>
+                  <UilEstate size="18" color="#6563FF" className="nav__icon" />
                   Home
                 </a>
               </Link>
             </li>
             <li className="nav__item">
-              <Link href="/about">
+              <Link href="/#about-me" legacyBehavior>
                 <a className="nav__link" onClick={handleClick}>
-                  <UilUser size="18" color="#6563FF" className="nav__icon"/> About
+                  <UilUser size="18" color="#6563FF" className="nav__icon" />{" "}
+                  About
                 </a>
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/skills">
+              <Link href="/#skills" legacyBehavior>
                 <a className="nav__link">
-                  <UilFileAlt size="18" color="#6563FF" className="nav__icon"/> Skills
+                  <UilFileAlt size="18" color="#6563FF" className="nav__icon" />{" "}
+                  Skills
                 </a>
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/qualifications">
+              <Link href="/#work-qualifications" legacyBehavior>
                 <a className="nav__link">
-                  <UilBackpack  size="18" color="#6563FF" className="nav__icon"/> Qualifications
+                  <UilBackpack
+                    size="18"
+                    color="#6563FF"
+                    className="nav__icon"
+                  />{" "}
+                  Qualifications
                 </a>
               </Link>
             </li>
@@ -65,23 +75,30 @@ const Navbar = () => {
               </Link>
             </li> */}
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/portfolio">
+              <Link href="/#portfolio" legacyBehavior>
                 <a className="nav__link">
-                  <UilScenery size="18" color="#6563FF" className="nav__icon"/> Portfolio
+                  <UilScenery size="18" color="#6563FF" className="nav__icon" />{" "}
+                  Portfolio
                 </a>
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/blog">
+              <Link href="/blog" legacyBehavior>
                 <a className="nav__link">
-                  <UilDocumentLayoutLeft size="18" color="#6563FF" className="nav__icon"/> Blog
+                  <UilDocumentLayoutLeft
+                    size="18"
+                    color="#6563FF"
+                    className="nav__icon"
+                  />{" "}
+                  Blog
                 </a>
               </Link>
             </li>
             <li className="nav__item" onClick={handleClick}>
-              <Link href="/contact">
+              <Link href="/#contact-me" legacyBehavior>
                 <a className="nav__link">
-                  <UilMessage size="18" color="#6563FF" className="nav__icon"/> Contactme
+                  <UilMessage size="18" color="#6563FF" className="nav__icon" />{" "}
+                  Contactme
                 </a>
               </Link>
             </li>
