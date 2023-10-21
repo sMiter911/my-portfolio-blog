@@ -26,7 +26,7 @@ const handler = async (req, res) => {
         <div class="img-container" style="display: flex;justify-content: center;align-items: center;border-radius: 5px;overflow: hidden; font-family: 'helvetica', 'ui-sans';">              
               </div>
               <div class="container" style="margin-left: 20px;margin-right: 20px;">
-              <h3>You've got a new mail from ${req.body.name}, their email is: ✉️ ${req.body.email} </h3>
+              <h3>You've got a new mail from ${req.body.name}, of email address: ✉️ ${req.body.email} </h3>
               <div style="font-size: 16px;">
               <p>Message:</p>
               <p>${req.body.message}</p>
@@ -34,8 +34,8 @@ const handler = async (req, res) => {
               </div>
               <p class="footer" style="font-size: 16px;padding-bottom: 20px;border-bottom: 1px solid #D1D5DB;">CONTACT US FORM LEAD</p>
               <div class="footer-links" style="display: flex;justify-content: center;align-items: center;">
-                <a href="https://my-portfolio-blog-omega.vercel.app/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Website</a>
-                <a href="https://my-portfolio-blog-omega.vercel.app/blog" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Blog</a>
+                <a href="https://wandus.website/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Website</a>
+                <a href="https://wandus.website/blog" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Blog</a>
                 <a href="https://github.com/sMiter911" style="text-decoration: none;margin: 8px;color: #9CA3AF;">GitHub</a>
                 <a href="https://www.instagram.com/smiter911/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Instagram</a>
                 <a href="https://www.linkedin.com/in/wandumuzi-mathunjwa/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">LinkedIn</a>
